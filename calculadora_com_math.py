@@ -86,3 +86,14 @@ while opcao != "0":
 
     else:
         print('Opção inválida. Tente novamente.\n\n')
+
+
+class Calculadora:
+    def soma(self,num1,num2):
+        return num1 + num2
+
+    def subtracao(self,num1,num2):
+        return num1 - num2
+
+calc = Calculadora()
+calc.soma(1,2)

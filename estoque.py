@@ -32,27 +32,29 @@ Arroz: 50 unidades
 
 """
 
-estoque = {}
+
+class Estoque:
+    def __init__(self):
+        self.estoque = {}
+
+    def adicionar_produto(self, produto, quantidade):
+        self.estoque[produto] = quantidade
+        return print(f"Produto {produto} adicionado com sucesso\n\n")
 
 
-def adicionar_produto(produto, quantidade):
-    estoque[produto] = quantidade
-    return print(f"Produto {produto} adicionado com sucesso\n\n")
+    def remover_produto(self, produto):
+        self.estoque.pop(produto)
+        return print(f'Produto {produto} foi excluído com sucesso.\n\n')
 
 
-def remover_produto(produto):
-    estoque.pop(produto)
-    return print(f'Produto {produto} foi excluído com sucesso.\n\n')
+    def atualizar_quantidade(self, produto, nova_quantidade):
+        self.estoque[produto] = nova_quantidade
+        return print(f'A quantidade de {produto} foi atualizada para {nova_quantidade}.\n\n')
 
 
-def atualizar_quantidade(produto, nova_quantidade):
-    estoque[produto] = nova_quantidade
-    return print(f'A quantidade de {produto} foi atualizada para {nova_quantidade}.\n\n')
-
-
-def exibir_estoque():
-    if estoque:
-        for produto, quantidade in estoque.items():
-            print(f'Produto: {produto}, Quantidade: {quantidade}')
-    else:
-        print("O estoque está vazio.")
+    def exibir_estoque(self):
+        if self.estoque:
+            for produto, quantidade in self.estoque.items():
+                print(f'Produto: {produto}, Quantidade: {quantidade}')
+        else:
+            print("O estoque está vazio.")

@@ -32,31 +32,46 @@ Arroz: 50 unidades
 
 
 """
-from estoque import adicionar_produto, remover_produto, atualizar_quantidade, exibir_estoque
 
-opcao = ""
-while opcao != "0":
+from estoque import Estoque
+
+
+
+
+def run(estoque):
+
+
+
     opcao = ""
-    print("1 - Adicionar Produto \n2 - Remover Produto \n3 - Atualizar Quantidade \n4 - Exibir Estoque \n0 - Sair")
-    opcao = input(f'Escolha: {opcao}')
+    while opcao != "0":
+        opcao = ""
+        print("1 - Adicionar Produto \n2 - Remover Produto \n3 - Atualizar Quantidade \n4 - Exibir Estoque \n0 - Sair")
+        opcao = input(f'Escolha: {opcao}')
 
-    if opcao in ["1", "2", "3", "4"]:
+
         if opcao == "1":
             produto = input('Digite o nome do produto: ')
             quantidade = int(input('Digite a quantidade: '))
-            adicionar_produto(produto, quantidade)
+            estoque.adicionar_produto(produto, quantidade)
 
         if opcao == "2":
             produto = input('Digite o nome do produto que deseja remover: ')
-            remover_produto(produto)
+            estoque.remover_produto(produto)
 
         if opcao == "3":
             produto = input('Digite o nome do produto: ')
             nova_quantidade = int(input('Digite a nova quantidade quantidade: '))
-            atualizar_quantidade(produto,nova_quantidade)
+            estoque.atualizar_quantidade(produto,nova_quantidade)
 
         if opcao == "4":
-            exibir_estoque()
+            estoque.exibir_estoque()
 
-    elif opcao == "0":
+        elif opcao == "0":
             print('Saindo...')
+
+def main():
+    estoque = Estoque()
+    run(estoque)
+
+if __name__ == "__main__":
+    main()
