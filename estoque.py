@@ -41,7 +41,7 @@ def adicionar_produto(produto, quantidade):
 
 
 def remover_produto(produto):
-    estoque.popitem(produto)
+    estoque.pop(produto)
     return print(f'Produto {produto} foi excluído com sucesso.\n\n')
 
 
