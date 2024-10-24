@@ -45,7 +45,8 @@ Parabéns! Você acertou em 3 tentativas.
 
 -----Gerenciamento de Estoque usando Dicionários e Módulos:
 
-Crie um programa que gerencie um estoque de produtos. O estoque deve ser armazenado em um dicionário, onde as chaves são os nomes dos produtos e os valores são suas quantidades.
+Crie um programa que gerencie um estoque de produtos. O estoque deve ser armazenado em um dicionário, onde
+as chaves são os nomes dos produtos e os valores são suas quantidades.
 O programa deve permitir adicionar novos produtos, remover produtos e atualizar a quantidade no estoque.
 Implemente as seguintes funcionalidades usando funções:
 adicionar_produto(produto, quantidade)
